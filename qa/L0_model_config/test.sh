@@ -88,7 +88,7 @@ for modelpath in \
         autofill_noplatform/tensorrt/mixed_batch_hint_shape_values/1 \
         autofill_noplatform_success/tensorrt/no_config_shape_tensor/1 ; do
     mkdir -p $modelpath
-    cp /data/inferenceserver/${REPO_VERSION}/qa_shapetensor_model_repository/plan_zero_1_float32/1/model.plan \
+    cp /data/inferenceserver/${REPO_VERSION}/qa_shapetensor_model_repository/plan_zero_1_float32_int32/1/model.plan \
        $modelpath/.
 done
 
@@ -220,14 +220,14 @@ for modelpath in \
         autofill_noplatform/python/model_transaction_policy_mismatch \
         autofill_noplatform/python/output_wrong_property ; do
     mkdir -p $modelpath/1
-    mv $modelpath/model.py $modelpath/1/.
+    cp $modelpath/model.py $modelpath/1/.
 done
 for modelpath in \
         autofill_noplatform_success/python/conflicting_scheduler_ensemble/conflicting_scheduler_ensemble \
         autofill_noplatform_success/python/conflicting_scheduler_ensemble/ensemble_first_step \
         autofill_noplatform_success/python/conflicting_scheduler_ensemble/ensemble_second_step ; do
     mkdir -p $modelpath/1
-    mv $modelpath/model.py $modelpath/1/.
+    cp $modelpath/model.py $modelpath/1/.
 done
 
 # Make version folders for custom test model repositories.
